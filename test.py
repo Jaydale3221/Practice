@@ -25,3 +25,7 @@ print(dict['key1']['nested_dict'][2])
 #Nested Dictionary
 d ={'outside_key': {'inside_key' :'Value inside the inside key'}} 
 print(d['outside_key']['inside_key'])
+
+
+
+#making new changes
