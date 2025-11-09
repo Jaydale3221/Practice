@@ -182,3 +182,108 @@ print(output)
 # ------------------------------------------------
 # ✅ END OF PYTHON BASICS
 # ------------------------------------------------
+# practice
+a = 5 
+b = 10
+print(f'Sum of {a} and {b} is {a+b}')
+
+word = 'Python'
+print(word[1:3])
+print(word[3::-1])
+print(word[-2:])
+print(word[4::-1])
+print(word[0::2])
+
+text = 'hello world'
+print(text.title())
+
+f = [1,2,3,4,5]
+g = [6,7,8,9,10]
+
+f.append(6)
+f.pop(1)
+f.insert(4, 'changed')
+print(f[::-1])
+print(f)
+combined = f + g
+print(combined)
+
+tup = (1,2,3)
+lst = list(tup)
+lst.append(4)
+t = tuple(lst)
+print(t)
+
+
+list = [1,1,1,2,2,2,2,3,3,3]
+s = set(list)
+print(s)
+
+
+detail = {'name': 'Jay','age':26, 'country': 'India'}
+detail['email'] = 'jd@gmail.com'
+detail['place'] = 'KOP'
+print(detail)
+
+student = {'marks': {'math': 90, 'science': 85}}
+print(student['marks'])
+
+for i in range(0,11):
+    print(i)
+
+for word in range(0,5):
+    print('Hello')
+
+i = 5
+while i<=10:
+    print(i)
+    i = i + 1
+
+squr = [1,2,3,4,5]
+for item in squr:
+    print(item**2)
+
+for i in range(10,0,-1):
+    print(i)
+
+lst= [1,2,3,4,5,6,7,8,9,10]
+for i in lst:
+    if i % 2 == 0:
+        print(i)
+
+def myfun(para):
+    print('Hello ' + para)
+
+myfun('jay')
+
+
+def add_fun(num1, num2):
+    return print(num1 + num2)
+add_fun(100,250)
+
+def is_even(num):
+    if num % 2 ==0:
+        print(True)
+    else:
+        print(False)
+        
+is_even(3)
+
+def sqaure_list(numbers):
+    squared = []
+    for item in numbers:
+        squared.append(item**2)
+    return squared
+
+nums = [1,2,3]
+print(sqaure_list(nums))
+
+
+def squaredlist(num):
+    squared = []
+    for item in num:
+        squared.append(item**2)
+    return squared
+
+num = [2,3,4,6]
+print(squaredlist(num))
