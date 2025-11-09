@@ -1,85 +1,126 @@
-# ================================================
-# 🐍 PYTHON BASICS - Quick Reference / Study Notes
-# ================================================
-
 # ------------------------------------------------
 # 1️⃣ PRINTING AND VARIABLES
 # ------------------------------------------------
-print("Hello, World!")   # Print statement
 
-number = 10              # Integer variable
-name = "John"            # String variable
+# Basic print statement
+print("Hello, World!")
+
+# Variable assignment
+number = 10             # Integer variable
+name = "John"           # String variable
 
 # Using format() for string formatting
 print('My number is {one} and my name is {two}'.format(one=number, two=name))
-print('My number is {number} and my name is {name}') # this is wrong - it prints {number} and {name}
-print(f'My number is {number} and my name is {name}')
+# ⚠️ Below line prints the placeholders literally — incorrect format
+print('My number is {number} and my name is {name}')
 
-# Using f-string (modern and preferred way)
+# Using f-string (✅ modern and preferred)
+print(f'My number is {number} and my name is {name}')
 print(f'My name is {name}')
 
 
 # ------------------------------------------------
 # 2️⃣ STRINGS
 # ------------------------------------------------
+
 s = 'Hello'
-print(s[0:2])            # String slicing → prints 'He'
+print(s[0:2])    # String slicing → Output: 'He'
+
+# Common string methods
+text = 'hello world'
+print(text.title())    # Capitalizes first letter of each word
+print(text.upper())    # Converts to uppercase
+print(text.split())    # Splits into a list by spaces
+
+tweet = 'Go splits! # Sports'
+print(tweet.split('#'))     # Split string by '#'
+print(tweet.split('#')[1])  # Access the part after '#'
 
 
 # ------------------------------------------------
 # 3️⃣ LISTS
 # ------------------------------------------------
-# Lists are ordered, mutable collections (use [ ])
+# Lists are ordered, mutable (changeable), and use [ ]
+
 my_list = [1, 2, 3, 4, 5]
-my_list.append(6)        # Add an element
-my_list.pop(3)           # Remove element at index 3
+my_list.append(6)         # Add element at end
+my_list.pop(3)            # Remove element at index 3
 print(my_list)
 
 # Lists are mutable
 new_list = [0, 1, 2]
+new_list[0] = 'new'       # Modify element
 print(new_list)
-new_list[0] = 'new'      # Changing value at index 0
-print(new_list)
+
+# List operations
+f = [1, 2, 3, 4, 5]
+g = [6, 7, 8, 9, 10]
+
+f.append(6)
+f.pop(1)
+f.insert(4, 'changed')
+
+print(f[::-1])            # Reverse list
+print(f)
+
+combined = f + g          # Combine two lists
+print(combined)
 
 
 # ------------------------------------------------
 # 4️⃣ TUPLES
 # ------------------------------------------------
-# Tuples are ordered and immutable (use ( ))
+# Tuples are ordered and immutable (cannot change)
 t = (1, 2, 3)
+print(t)
+
+# Convert tuple → list → modify → back to tuple
+tup = (1, 2, 3)
+lst = list(tup)
+lst.append(4)
+t = tuple(lst)
 print(t)
 
 
 # ------------------------------------------------
 # 5️⃣ SETS
 # ------------------------------------------------
-# Sets contain only unique elements (use { })
-my_set = set([1,1,1,2,2,2])
-print(my_set)            # Output: {1, 2}
+# Sets store unique values only (no duplicates)
+list_vals = [1, 1, 1, 2, 2, 2, 3, 3, 3]
+unique_set = set(list_vals)
+print(unique_set)    # Output: {1, 2, 3}
 
 
 # ------------------------------------------------
 # 6️⃣ DICTIONARIES
 # ------------------------------------------------
-# Dictionaries store key-value pairs (use { })
-d = {'key1':'value', 'key2':123}
+# Dictionaries store key-value pairs using { }
+
+d = {'key1': 'value', 'key2': 123}
 print(d['key1'])
 print(d['key2'])
 
-# Nested dictionary
-dict1 = {'key1': {'nested_dict': [1,2,3,4,5]}}
+# Nested dictionaries
+dict1 = {'key1': {'nested_dict': [1, 2, 3, 4, 5]}}
 print(dict1['key1']['nested_dict'][2])
 
-# Another nested dictionary example
-d = {'outside_key': {'inside_key': 'Value inside the inside key'}}
+d = {'outside_key': {'inside_key': 'Value inside'}}
 print(d['outside_key']['inside_key'])
 
-# Dictionary examples continued
-d = {'key1': 'value1', 'key2': 'value2'}
-print(d['key2'])
+# Add and update dictionary values
+details = {'name': 'Jay', 'age': 26, 'country': 'India'}
+details['email'] = 'jd@gmail.com'
+details['place'] = 'KOP'
+print(details)
 
-d = {'key1': {'key2': 'nestedValue'}}
-print(d['key1']['key2'])
+student = {'marks': {'math': 90, 'science': 85}}
+print(student['marks'])
+
+# Dictionary methods
+d = {'k1': 1, 'k2': 2}
+print(d.keys())     # Get keys
+print(d.values())   # Get values
+print(d.items())    # Get key-value pairs
 
 
 # ------------------------------------------------
@@ -88,63 +129,65 @@ print(d['key1']['key2'])
 a = True
 print(a)
 
+
 # ------------------------------------------------
 # 8️⃣ CONDITIONALS (if, elif, else)
 # ------------------------------------------------
 if 1 < 2:
-    print('yes')
+    print('Yes, 1 is less than 2')
 
 if 1 == 3:
-    print('first')
+    print('First')
 elif 3 == 1:
-    print('middle')
+    print('Middle')
 else:
-    print('last')
+    print('Last')
 
 
 # ------------------------------------------------
-# 9️⃣ LOOPS
+# 9️⃣ LOOPS (for & while)
 # ------------------------------------------------
-# FOR LOOP - iterate over sequence
+
+# FOR loop - iterate over list
 seq = [1, 2, 3, 4, 5]
 for item in seq:
     print(item)
 
 for i in seq:
-    print('hello')
+    print('Hello')
 
-# WHILE LOOP
+# WHILE loop
 i = 1
 while i < 5:
-    print(f'i is : {i}')
-    i = i + 1
+    print(f'i is: {i}')
+    i += 1
 
 i = 7
 while i <= 10:
-    print(f'Value of i : {i}')
-    i = i + 1
+    print(f'Value of i: {i}')
+    i += 1
 
 
 # ------------------------------------------------
 # 🔟 RANGE FUNCTION
 # ------------------------------------------------
-# Used to generate a sequence of numbers
 for x in range(0, 5):
-    print(x)
+    print(x)   # Prints 0,1,2,3,4
 
 
 # ------------------------------------------------
 # 1️⃣1️⃣ LIST COMPREHENSION
 # ------------------------------------------------
+
 nums = [1, 2, 3, 4, 5]
 
-# Normal way
+# Regular way
 out = []
 for num in nums:
     out.append(num**2)
 print(out)
 
-# List comprehension (shorter way)
+# Shorter way using list comprehension
 out = [num**3 for num in nums]
 print(out)
 
@@ -157,133 +200,140 @@ print(p)
 # ------------------------------------------------
 # 1️⃣2️⃣ FUNCTIONS
 # ------------------------------------------------
-# Defining a function
+
+# Simple function
 def my_fun(param1):
-    """Simple function that prints its parameter"""
+    """Print the parameter value"""
     print(param1)
 
 my_fun('hello')
 
-# Function with string input
-def myname(str):
-    """Prints a greeting"""
-    print('Hello ' + str)
 
-myname('a')
+# Function with string input
+def myname(name):
+    """Print a greeting"""
+    print('Hello ' + name)
+
+myname('Jay')
+
 
 # Function with return value
 def square(num):
-    """Returns the square of a number"""
+    """Return square of a number"""
     return num**2
 
-output = square(3)
-print(output)
-
-# ------------------------------------------------
-# ✅ END OF PYTHON BASICS
-# ------------------------------------------------
-# practice
-a = 5 
-b = 10
-print(f'Sum of {a} and {b} is {a+b}')
-
-word = 'Python'
-print(word[1:3])
-print(word[3::-1])
-print(word[-2:])
-print(word[4::-1])
-print(word[0::2])
-
-text = 'hello world'
-print(text.title())
-
-f = [1,2,3,4,5]
-g = [6,7,8,9,10]
-
-f.append(6)
-f.pop(1)
-f.insert(4, 'changed')
-print(f[::-1])
-print(f)
-combined = f + g
-print(combined)
-
-tup = (1,2,3)
-lst = list(tup)
-lst.append(4)
-t = tuple(lst)
-print(t)
+print(square(3))
 
 
-list = [1,1,1,2,2,2,2,3,3,3]
-s = set(list)
-print(s)
-
-
-detail = {'name': 'Jay','age':26, 'country': 'India'}
-detail['email'] = 'jd@gmail.com'
-detail['place'] = 'KOP'
-print(detail)
-
-student = {'marks': {'math': 90, 'science': 85}}
-print(student['marks'])
-
-for i in range(0,11):
-    print(i)
-
-for word in range(0,5):
-    print('Hello')
-
-i = 5
-while i<=10:
-    print(i)
-    i = i + 1
-
-squr = [1,2,3,4,5]
-for item in squr:
-    print(item**2)
-
-for i in range(10,0,-1):
-    print(i)
-
-lst= [1,2,3,4,5,6,7,8,9,10]
-for i in lst:
-    if i % 2 == 0:
-        print(i)
-
-def myfun(para):
-    print('Hello ' + para)
-
-myfun('jay')
-
-
+# Function returning sum
 def add_fun(num1, num2):
-    return print(num1 + num2)
-add_fun(100,250)
+    """Print sum of two numbers"""
+    print(num1 + num2)
 
+add_fun(100, 250)
+
+
+# Function to check even number
 def is_even(num):
-    if num % 2 ==0:
+    """Check if a number is even"""
+    if num % 2 == 0:
         print(True)
     else:
         print(False)
-        
+
 is_even(3)
 
-def sqaure_list(numbers):
+
+# Function returning list of squared numbers
+def square_list(numbers):
     squared = []
     for item in numbers:
         squared.append(item**2)
     return squared
 
-nums = [1,2,3]
-print(sqaure_list(nums))
+nums = [1, 2, 3]
+print(square_list(nums))
 
 
-def squaredlist(num):
-    squared = []
-    for item in num:
-        squared.append(item**2)
-    return squared
+# ------------------------------------------------
+# 1️⃣3️⃣ MAP, FILTER, LAMBDA FUNCTIONS
+# ------------------------------------------------
 
-num = [2,3,4,6]
-print(squaredlist(num))
+# Regular function
+def times2(num): 
+    return num ** 2
+
+print(times2(5))
+
+# Using map() - applies a function to each element
+lst = list(map(times2, [2, 3, 4, 6]))
+print(lst)
+
+# Using lambda (anonymous function)
+sequence = [1, 2, 3, 4, 5]
+tripled = list(map(lambda num: num * 3, sequence))
+print(tripled)
+
+squared = list(map(lambda x: x**2, [1, 2, 3]))
+print(squared)
+
+# Adding a fixed number using lambda + map
+a = 10
+lst = list(map(lambda x: x + 10, [a]))
+print(lst)
+
+# filter() - filter elements based on a condition
+nums = [1, 2, 3, 4, 5, 6]
+even_nums = list(filter(lambda num: num % 2 == 0, nums))
+print(even_nums)
+
+
+# ------------------------------------------------
+# 1️⃣4️⃣ OPERATORS & UNPACKING
+# ------------------------------------------------
+
+# 'in' operator
+x = 'x' in [1, 2, 3]
+print(x)  # False
+
+# Tuple inside list
+pairs = [(1, 2), (3, 4)]
+print(pairs[1][1])   # Access 4
+print(pairs[1])      # (3,4)
+
+# Tuple unpacking
+for (a, b) in pairs:
+    print(a)
+
+
+# ------------------------------------------------
+# ✅ PRACTICE OUTPUT CHECKS
+# ------------------------------------------------
+a, b = 5, 10
+print(f'Sum of {a} and {b} is {a+b}')
+
+word = 'Python'
+print(word[1:3])     # 'yt'
+print(word[3::-1])   # Reverse from index 3
+print(word[-2:])     # Last 2 letters
+print(word[4::-1])   # Reverse from index 4
+print(word[0::2])    # Skip every 2nd char
+
+# Range examples
+for i in range(0, 11):
+    print(i)
+
+for _ in range(0, 5):
+    print('Hello')
+
+# Reverse countdown
+for i in range(10, 0, -1):
+    print(i)
+
+# Print even numbers from list
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for i in lst:
+    if i % 2 == 0:
+        print(i)
+
+print("✅ End of Python Basics Practice File")
