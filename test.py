@@ -69,4 +69,5 @@ print(d['key2'])
 
 # nested dictonaries
 d = {'key1' : {'key2' : 'nestedValue'}}
-print(d['key1']['key2'])
+print(d['key1']['key2'])    
+print('before dinner')
