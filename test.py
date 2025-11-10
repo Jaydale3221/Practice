@@ -337,3 +337,95 @@ for i in lst:
         print(i)
 
 print("✅ End of Python Basics Practice File")
+
+
+# 🧠 Python Crash Course Exercises
+
+# What is 7 to the power of 4?
+x = 7 **4
+print(x)
+# Split this string: "s = 'Hi there Sam!'"
+s = 'Hi there Sam!'
+print(s.split())
+# Turn it into a list.
+lst  = list(s.split())
+print(lst)
+# Given the variables, use .format() to print a formatted string.
+planet = 'Earth'
+diameter = 12742
+print(f'The diameter of planet {planet} is {diameter}')
+
+# Given this nested list, use indexing to grab the word "hello".
+lst = [1,2,[3,4],[5,[100,200,['hello']],23,11],1,7]
+print(lst[3][1][2][0])  # Output: hello
+
+# Given this nested dictionary, grab the word "hello".
+d = {'k1':[1,2,3,{'tricky':['oh','man','inception',{'target':[1,2,3,'hello']}]}]}
+print(d['k1'][3]['tricky'][3]['target'][3])
+
+# What is the main difference between a tuple and a list?
+
+# Create a function that grabs the email website domain from a string like "user@domain.com".
+# **So for example, passing "user@domain.com" would return: domain.com**
+def email(emailid):
+        username, domain = emailid.split('@')
+        print(domain + ' domain and this is username '+ username)
+        
+email('jaydale@gmail.com')
+
+# Example: "user@domain.com" → returns "domain.com".
+
+# Create a basic function that returns True if the word "dog" is contained in the input string (ignore case and punctuation).
+def findDog(sentence):
+    sentence = sentence.lower().split()
+    for word in sentence:
+        if 'dog' in word:
+            return True   
+    return False
+
+def findDog(sentence):
+    return 'dog' in sentence.lower().split()
+
+findDog('Is there a dog here?')
+
+# Create a function that counts how many times the word "dog" occurs in a string.
+def countDog(sentence):
+    x = 0 
+    sentence = sentence.lower().split()
+    for word in sentence:
+        if 'dog' in word:
+            x = x + 1
+    return x   
+
+countDog('This dog runs faster than the other dog dude!')
+
+# Use lambda expressions and the filter() function to filter out words from a list that don’t start with the letter ‘s’.
+
+seq = ['soup','dog','salad','cat','great']
+s = []
+for word in seq:
+   if word[0] == 's':
+    s.append(word)
+print(s)
+
+lambda word : word[0] == 's', seq
+
+# result = list(filter(lambda word: word[0] == 's', seq))
+
+lst = list(filter (lambda word : word[0] == 's', seq))
+print(lst)
+lst = list(filter (lambda word :word[0] ==  's',seq) )
+print(lst)
+
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# n = []
+# for num in nums:
+#     if num % 2 == 0:
+#         n.append(num)
+
+# print(n)
+
+lst = list(filter(lambda num : num % 2 == 0, nums) )
+print(lst)  
+# You are driving a little too fast, and a police officer stops you — write a function (the prompt continues in the notebook).
