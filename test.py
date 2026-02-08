@@ -1,31 +1,23 @@
-print("Hello, World!");
+with open("example.txt", "r") as file:
+    content = file.read()
+ 
 
-number = 10
-name = "John"
-print('My number is {one} and my name is {two}' .format(one=number, two=name));
+with open("example.txt", "w") as file:
+    file.write("Apple\n")
+    file.write("Banana\n")
+    file.write("Elderberry\n")
+    file.write("Fig\n")
+    file.write("Grape\n")
+    file.write("Honeydew\n")
+    file.write("Kiwi\n")
+    file.write("Lemon\n")
+    file.write("Lime\n")
+    file.write("Mango\n")
+    file.write("Melon\n")
+    file.write("Nectarine\n")
+    file.write("Orange\n")
 
-print(f'My name is  {name}')
-
-s = 'Hello'
-print(s[0:2])
-
-
-my_list = [1, 2, 3, 4, 5]
-my_list.append(6)
-print(my_list)
-
-d = {'key1':'value' , 'key2':123}
-print(d['key1']) 
-
-print(d['key2'])
-
-dict = {'key1': {'nested_dict':[1,2,3,4,5]}}
-print(dict['key1']['nested_dict'][2])
-
-#Nested Dictionary
-d ={'outside_key': {'inside_key' :'Value inside the inside key'}} 
-print(d['outside_key']['inside_key'])
+with open("example.txt", "a") as file:
+    file.write("Orange\n")
 
 
-
-#making new changes
